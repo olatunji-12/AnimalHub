@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contact Us</h2>
+            <div class="contact-info mb-4">
+                <h4>Visit Our Shelter</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> Flat 9, 14-16 Harcourt Terrace, Salisbury<br>
+                    <i class="fas fa-phone"></i> +447751583514<br>
+                    <i class="fas fa-envelope"></i> olanus59@gmail.com
+                </p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1741111649235-97860465d8cd" class="img-fluid rounded" alt="Shelter Interior">
+        </div>
+        
+        <div class="col-md-6">
+            <form class="needs-validation" method="POST" novalidate>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">
+                        Please provide your name.
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid email address.
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter your message.
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" data-loading>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

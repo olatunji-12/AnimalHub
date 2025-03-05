@@ -1,0 +1,27 @@
+/* Custom styles to complement Bootstrap theme */
+.pet-card {
+    transition: transform 0.2s;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.hero-section {
+    min-height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1629019897190-334bcb6ee074');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-info {
+    background-color: var(--bs-dark);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.animal-image {
+    max-height: 300px;
+    object-fit: cover;
+}

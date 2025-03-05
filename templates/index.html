@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section d-flex align-items-center justify-content-center text-center text-white mb-5">
+    <div class="container">
+        <h1 class="display-4">Find Your Perfect Companion</h1>
+        <p class="lead">Give a loving home to our adorable pets waiting for adoption</p>
+        <a href="#available-pets" class="btn btn-light btn-lg mt-3">
+            View Available Pets
+        </a>
+    </div>
+</div>
+
+<div class="container" id="available-pets">
+    <h2 class="text-center mb-4">Available Pets</h2>
+    
+    <div class="row g-4">
+        {% for animal in animals %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 pet-card">
+                <img src="{{ animal.image_url }}" class="card-img-top animal-image" alt="{{ animal.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal.name }}</h5>
+                    <p class="card-text">
+                        <strong>Species:</strong> {{ animal.species }}<br>
+                        <strong>Breed:</strong> {{ animal.breed }}<br>
+                        <strong>Age:</strong> {{ animal.age }} years
+                    </p>
+                    <a href="{{ url_for('animal_details', id=animal.id) }}" class="btn btn-primary" data-loading>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2>About Our Shelter</h2>
+            <p class="lead">We are dedicated to finding loving homes for pets in need. Our facility provides a safe and caring environment for animals waiting to find their forever families.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+        </div>
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1597451773417-891ce13364ab" class="img-fluid rounded" alt="Shelter Facility">
+        </div>
+    </div>
+</div>
+{% endblock %}
